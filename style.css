@@ -21,6 +21,7 @@ nav {
   align-items: center;
   padding: 20px 10%;
   position: relative;
+  z-index: 1000;
 }
 
 .logo {
@@ -32,22 +33,23 @@ nav {
   color: #00adb5;
 }
 
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
+  gap: 20px;
 }
 
-.nav-links li {
-  margin-left: 20px;
-}
-
-.nav-links a {
+.nav-links li a {
   text-decoration: none;
   color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
   transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links li a:hover {
+  background: rgba(0, 173, 181, 0.2);
   color: #00adb5;
 }
 
@@ -56,6 +58,7 @@ nav {
   display: none;
   font-size: 28px;
   cursor: pointer;
+  color: #fff;
 }
 
 /* HERO */
@@ -75,6 +78,7 @@ nav {
 
 .hero h2 {
   font-size: 36px;
+  margin-bottom: 15px;
 }
 
 .hero h2 span {
@@ -82,7 +86,8 @@ nav {
 }
 
 .hero p {
-  margin: 10px 0 20px;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .hero-img img {
@@ -91,27 +96,26 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #00adb5;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* BUTTON */
 .btn {
   background: #00adb5;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 25px;
   text-decoration: none;
   color: #fff;
-  transition: 0.3s;
+  transition: 0.3s ease;
   display: inline-block;
-  /* importante para que el margin funcione */
-  margin-top: 20px;
-  /* espacio arriba del botón */
+  margin-top: 15px;
   margin-bottom: 20px;
-  /* espacio debajo del botón */
+  font-size: 16px;
 }
 
 .btn:hover {
-  background: #007a7a;
+  background: #ff7e5f;
+  transform: scale(1.05);
 }
 
 /* SECTIONS */
@@ -148,11 +152,23 @@ footer {
 
 /* ====== MEDIA QUERIES ====== */
 @media (max-width: 768px) {
+  /* HERO responsive */
   .hero {
     flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
 
+  .hero-img img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  /* NAV responsive */
   .nav-links {
     position: absolute;
     top: 70px;
@@ -162,7 +178,8 @@ footer {
     width: 200px;
     display: none;
     border-radius: 10px;
-    padding: 10px 0;
+    padding: 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   }
 
   .nav-links.active {
@@ -170,7 +187,12 @@ footer {
   }
 
   .nav-links li {
-    margin: 15px 0;
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    text-align: center;
   }
 
   .hamburger {
@@ -179,29 +201,25 @@ footer {
 }
 
 @media (max-width: 480px) {
+  section {
+    padding: 60px 5%;
+  }
+
   .hero-img img {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 
   .hero h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
-}
-/* Ajuste de textos y botones para móviles */
-.hero-text h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
 
-.hero-text p {
-  margin-bottom: 20px;
-  font-size: 16px;
-}
+  .hero p {
+    font-size: 15px;
+  }
 
-.btn {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  padding: 12px 25px; /* un poquito más grande para tocar con el dedo */
-  font-size: 16px;
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
