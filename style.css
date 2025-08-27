@@ -102,6 +102,12 @@ nav {
   text-decoration: none;
   color: #fff;
   transition: 0.3s;
+  display: inline-block;
+  /* importante para que el margin funcione */
+  margin-top: 20px;
+  /* espacio arriba del botón */
+  margin-bottom: 20px;
+  /* espacio debajo del botón */
 }
 
 .btn:hover {
