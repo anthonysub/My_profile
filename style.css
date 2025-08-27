@@ -1,4 +1,4 @@
-/* Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +6,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Header */
+/* HEADER */
 header {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: #fff;
   display: flex;
@@ -20,6 +20,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
+  position: relative;
 }
 
 .logo {
@@ -50,15 +51,22 @@ nav {
   color: #00adb5;
 }
 
-/* Hero (Home) */
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* HERO */
 .hero {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: left;
   gap: 50px;
   padding: 0 10%;
+  flex-wrap: wrap;
 }
 
 .hero-text {
@@ -86,6 +94,7 @@ nav {
   box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
 }
 
+/* BUTTON */
 .btn {
   background: #00adb5;
   padding: 10px 20px;
@@ -99,7 +108,7 @@ nav {
   background: #007a7a;
 }
 
-/* Sections */
+/* SECTIONS */
 section {
   padding: 60px 10%;
   text-align: center;
@@ -123,10 +132,53 @@ section {
   transform: translateY(-5px);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background: #111;
   color: #aaa;
   padding: 20px;
   text-align: center;
+}
+
+/* ====== MEDIA QUERIES ====== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 10%;
+    flex-direction: column;
+    background: #0f2027;
+    width: 200px;
+    display: none;
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
 }

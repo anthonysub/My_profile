@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
+  <!-- HEADER -->
+  <header id="home">
     <nav>
       <h1 class="logo">Anthony<span>.</span></h1>
-      <ul class="nav-links">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -19,29 +20,27 @@
       </ul>
     </nav>
 
-    <!-- Home Section -->
-    <div id="home" class="hero">
+    <div class="hero">
       <div class="hero-text">
         <h2>Hello, I'm <span>Anthony Sub Coy</span></h2>
         <p>Junior Developer | Python | Django | React | Node.js</p>
         <a href="#projects" class="btn">View My Work</a>
       </div>
       <div class="hero-img">
-        <img src="home.png" alt="Anthony Sub Coy">
+        <img src="img/anthony.jpg" alt="Anthony Sub Coy">
       </div>
     </div>
   </header>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>
-      I'm an enthusiastic developer passionate about building web applications and learning new technologies. 
+    <p>I'm an enthusiastic developer passionate about building web applications and learning new technologies. 
       Currently focused on Python, Django, React, and Node.js. 🚀
     </p>
   </section>
 
-  <!-- Projects -->
+  <!-- PROJECTS -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
     <div class="project-grid">
@@ -60,7 +59,26 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Let's build someth
+    <p>Let's build something great together!</p>
+    <a href="mailto:anthonysub@gmail.com" class="btn">Send Email</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Anthony Sub Coy. All rights reserved.</p>
+  </footer>
+
+  <!-- SCRIPT HAMBURGUESA -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
